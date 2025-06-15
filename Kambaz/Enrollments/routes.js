@@ -7,8 +7,8 @@ export default function EnrollmentRoutes(app) {
     res.sendStatus(204);
   });
 
-  app.get("/api/enrollments", (req, res) => {
-    const enrollments = dao.findAllEnrollments();
+  app.get("/api/enrollments", async (req, res) => {
+    const enrollments = await dao.findAllEnrollments();
     res.json(enrollments);
   });
 
